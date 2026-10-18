@@ -35,7 +35,7 @@ Things that worked well in the past but are not yet habits or part of the proces
 * Elegant Quagga: plannen van meetings tussen teamleden (+4)
 * Fantastic Yak: Aardige en fatsoenlijke communicatie (+3)
 * Victorious Unicorn: Moeite (+2)
-* Magnificent Turtle: werkverdeling is goed(iedereen stopt ongeveer even veel input) (+2)
+* Magnificent Turtle: werkverdeling is goed (iedereen stopt ongeveer even veel input) (+2)
 * Victorious Unicorn: Inititiatief dat genomen wordt is meer dan genoeg
 * Victorious Unicorn: Presenteren aan elkaar
 * Victorious Unicorn: Onderzoek
@@ -130,3 +130,64 @@ Things that worked well in the past but are not yet habits or part of the proces
   blijft.
 - Neemt vaak de leiding, initiatief voor creatives
 
+## Zelfreflecties
+
+### Zelfreflectie Timo:
+
+Ik heb veel feedback gekregen over dat ik te weinig communiceer buiten de lessen om en ook in de lessen, ik ben het wel
+daarmee eens ik moet gewoon meer van mezelf laten horen maar dat vind ik nog lastig zeker als we nog niet extreem veel
+actiepunten hebben en het vooral gaat om dingen bedenken. Ik ben blij dat mijn groepsleden wel zien dat ik inzet toon
+ook al heb ik nog niet zoveel resultaten laten zien. Ik vind ook zelf dat mijn inzet wel goed gaat maar wil wel meer
+daarmee doen, ik heb vrij weinig daadwerkelijk gerealiseerd omdat ik niet echt een duidelijk goed plan heb van wat ik
+moest doen, volgende sprint heb ik samen met Joshua genoeg om te doen dus dan ga ik genoeg werk kunnen leveren. Ook moet
+ik meer kleine reacties geven in ons discord kanaal puur om te laten zien dat ik wel betrokken ben want anders komt het
+inderdaad over alsof ik weinig communiceer wanneer ik het wel lees en er wel meningen over heb.
+
+### Zelfreflectie Raul:
+
+Uit de feedback die ik heb gekregen, blijkt dat ik goed werk lever, mijn best doe en serieus ben. Ook ging het ophalen
+van de antwoorden voor de enquête goed. Ik denk dat ik hierdoor mijn taken goed uitvoer. Als verbeterpunt kreeg ik terug
+dat ik soms wat stil en afwachtend ben en meer initiatief mag tonen, bijvoorbeeld door een meeting te begeleiden. Deze
+punten wil ik in de volgende sprint aanpakken door tijdens een meeting de leiding te nemen en het gesprek te leiden.
+Verder moet ik meer met de creatives communiceren. Dit wordt ook een actiepunt voor mij in de volgende sprint. Dit sluit
+aan bij ons gezamenlijke actiepunt: "Een duidelijker doel/opdracht hebben voor creatives". Om hieraan bij te dragen, wil
+ik vaker met de creatives communiceren over de stand van zaken en controleren of alles nog duidelijk is. Met deze
+actiepunten wil ik meer initiatief tonen en actiever bijdragen aan het team.
+
+### Zelfrefelctie yassin:
+
+Uit de feedback van mijn groepsgenoten blijkt dat ik goed meedenk, mijn mening duidelijk geef en actief meedoe aan
+discussies. Dit vind ik fijn om te horen, omdat ik het belangrijk vind om mijn steentje bij te dragen aan het project.
+Een verbeterpunt is mijn communicatie buiten de calls om. Ik mis soms berichten doordat ik geen notificaties ontvang van
+Discord, waardoor ik niet altijd op tijd reageer. Ik ga daarom mijn notificaties goed instellen en vaker zelf Discord
+controleren. Zo wil ik ervoor zorgen dat ik niet alleen tijdens de calls, maar ook daarbuiten beter betrokken ben bij
+het project.
+
+### Zelfreflectie Joshua:
+
+Ik heb alleen maar positieve feedback gekregen en daar ben ik blij mee. De positieve feedback is vooral mijn rol in de
+groep over de samenwerking en organisatie. Zelf vind ik dat ik nog op bepaalde punten kan groeien. Aangezien ik nu in
+mijn 4de jaar zit moet ik meer van mezelf verwachten. Bijvoorbeeld de sprint review waren wij niet goed voorbereid, in
+vorige projecten heb ik vaak maar deelgenomen in plaats van er voor zorgen dat het goed in orde was. Ik kan ook nog meer
+groeien in het maken van het project zelf. Ik heb tot nu toe alleen gedaan wat er gepland was voor ons als embedded,
+maar ik weet dat ik ook meer kan doen en alvast dingen af kan maken voordat de deadline er is zodat we later meer
+speling hebben qua tijd. Ik ben assigned aan de action point "Gitlab omgeving up to date houden". We hebben tot nu toe
+de gitlab amper gebruikt en dat is zonde (zeker aangezien we nu last hebben van onduidelijkheid bij creative
+opdrachten). Ik ga hierom elke week een moment nemen om door te kijken en er voor te zorgen dat we tickets aanmaken voor
+opdrachten en ze ook bijwerken wanneer ze af zijn.
+
+### Zelfreflectie Borys:
+
+Uit de feedback blijkt dat mijn groepsgenoten waarderen dat ik vaak de leiding en het initiatief neem, ook richting de
+creatives, en dat ik help de groep op koers te houden. Dat is fijn om te horen, want ik vind het belangrijk dat het
+project vooruitgaat. Tegelijk is het verbeterpunt dat ik soms juist minder de leiding moet nemen, zodat anderen de
+ruimte krijgen en ook
+initiatief moeten tonen. Dat herken ik. Als het stil blijft, ga ik snel zelf iets oppakken, terwijl ik dan het “wachten
+tot iemand initiatief neemt” eigenlijk in stand houd. Volgende sprint wil ik vaker eerst vragen wie iets wil oppakken
+voordat ik het zelf doe. Ook kan ik mijn plannen beter communiceren. Soms heb ik een idee in mijn hoofd dat de rest nog
+niet kent. Ik ga mijn
+plannen daarom eerst kort uitleggen in de groep voordat ik ermee aan de slag ga. Daarnaast houd ik de general chat
+voortaan voor projectzaken en deel ik grappen en video’s ergens anders. En ja, mijn wekker gaat voortaan beter staan,
+zodat ik op tijd ben. Mijn actiepunt is tussentijdse updates geven aan de opdrachtgever. Ik ga elke week een korte
+update sturen over onze
+voortgang, zodat zij beter op de hoogte zijn en we bij de sprint review niet voor verrassingen staan.
