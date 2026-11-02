@@ -2,3 +2,9 @@
 .env
 .DS_Store
 node_modules
+.nuxt
+.output
+.data
+.vercel
+dist
+.env*

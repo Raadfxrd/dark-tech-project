@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 9 1860 1860" role="img" aria-label="Greep: een hand aan de touwtjes van een poppenspelerskruis">
+  <defs>
+    <path id="hand" d="M790 1063 L868 1025 L965 1052 L1090 1040 C1150 1075 1185 1115 1190 1120 L1352 1250 L1410 1390 Q1415 1430 1378 1432 Q1340 1430 1315 1395 Q1290 1360 1280 1320 L1200 1282 Q1185 1240 1173 1180 L1200 1400 L1160 1615 Q1145 1648 1112 1645 Q1085 1635 1085 1610 L1100 1400 L1062 1280 Q1052 1272 1048 1280 L1040 1825 Q1020 1858 993 1858 Q965 1855 948 1825 L945 1390 L928 1278 Q924 1272 920 1278 L883 1405 L903 1590 Q905 1630 870 1645 Q840 1655 830 1625 L780 1395 L781 1180 L770 1250 L720 1265 L693 1290 L693 1415 Q680 1460 650 1465 Q625 1462 612 1445 L585 1290 L585 1260 L680 1148 Z"/>
+    <clipPath id="on-hand"><use href="#hand"/></clipPath>
+    <g id="strings" stroke-width="15" stroke-linecap="round" fill="none">
+      <path d="M614 300 L642 1245"/>
+      <path d="M810 600 L826 1305"/>
+      <path d="M1052 560 L995 1382"/>
+      <path d="M1207 660 L1140 1330"/>
+      <path d="M1287 300 L1265 1238"/>
+    </g>
+  </defs>
+  <circle cx="985" cy="939" r="930" fill="#A8D5BA"/>
+  <use href="#strings" stroke="#0E5E6F"/>
+  <g fill="#F26B3A" stroke="#F26B3A" stroke-width="16" stroke-linejoin="round">
+    <path d="M520 300 L652 210 L1408 686 L1270 770 Z"/>
+    <path d="M1278 203 L1408 292 L652 775 L525 688 Z"/>
+  </g>
+  <use href="#hand" fill="#0E5E6F"/>
+  <use href="#strings" stroke="#A8D5BA" clip-path="url(#on-hand)"/>
+</svg>
