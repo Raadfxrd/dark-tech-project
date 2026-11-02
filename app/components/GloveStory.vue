@@ -1,6 +1,6 @@
 <script setup>
-import { onBeforeUnmount, onMounted, reactive, ref } from 'vue'
-import { windowOpacity } from '~/lib/timeline.js'
+import {onBeforeUnmount, onMounted, reactive, ref} from 'vue'
+import {windowOpacity} from '~/lib/timeline.js'
 
 const emit = defineEmits(['ready'])
 
@@ -14,11 +14,12 @@ const story = ref(null)
 const canvas = ref(null)
 const ready = ref(false)
 const failed = ref(false)
-const readout = reactive({ mcp: 0, pip: 0, dip: 0, rope: 0 })
+const readout = reactive({mcp: 0, pip: 0, dip: 0, rope: 0})
 
 let raf = 0
 let glove = null
-let cleanup = () => {}
+let cleanup = () => {
+}
 
 onMounted(() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -33,10 +34,12 @@ onMounted(() => {
   }
   measure()
   p = target
-  addEventListener('scroll', measure, { passive: true })
+  addEventListener('scroll', measure, {passive: true})
   const sizer = new ResizeObserver(measure)
   sizer.observe(story.value)
-  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting })
+  const io = new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting
+  })
   io.observe(story.value)
   cleanup = () => {
     removeEventListener('scroll', measure)
@@ -74,16 +77,16 @@ onMounted(() => {
   raf = requestAnimationFrame(tick)
 
   import('~/lib/glove.js')
-    .then(({ createGlove }) => createGlove(canvas.value, { modelUrl, still }))
-    .then((g) => {
-      glove = g
-      ready.value = true
-      emit('ready', g)
-    })
-    .catch((e) => {
-      console.error(e)
-      failed.value = true
-    })
+      .then(({createGlove}) => createGlove(canvas.value, {modelUrl, still}))
+      .then((g) => {
+        glove = g
+        ready.value = true
+        emit('ready', g)
+      })
+      .catch((e) => {
+        console.error(e)
+        failed.value = true
+      })
 })
 
 onBeforeUnmount(() => {
@@ -94,15 +97,17 @@ onBeforeUnmount(() => {
 
 <template>
   <section ref="story" class="story" aria-label="Greep H1 en hoe hij werkt">
-    <span id="zo-werkt-het" class="anchor" />
+    <span id="zo-werkt-het" class="anchor"/>
     <div class="stage">
-      <canvas ref="canvas" :class="{ ready }" role="img" aria-label="3D-model van de Greep H1: een handschoen met een touw naar de wijsvinger en een module op de onderarm" />
+      <canvas ref="canvas" :class="{ ready }" role="img"
+              aria-label="3D-model van de Greep H1: een handschoen met een touw naar de wijsvinger en een module op de onderarm"/>
       <img v-if="failed" class="fallback" src="/logo.svg" alt="">
       <div class="copy">
         <div class="frame frame-hero">
           <p class="product">Greep H1</p>
           <h1>Jouw hand.<br>Onze zorg.</h1>
-          <p class="lede">Een handschoen die je wijsvinger voor je beweegt. Alle techniek zit in een kleine module op je onderarm.</p>
+          <p class="lede">Een handschoen die je wijsvinger voor je beweegt. Alle techniek zit in een kleine module op je
+            onderarm.</p>
           <div class="cta">
             <a class="btn" href="#kopen">Reserveer voor €199</a>
             <a class="link" href="#zo-werkt-het">Zo werkt het</a>
@@ -111,21 +116,35 @@ onBeforeUnmount(() => {
         <div class="frame">
           <p class="step"><span class="step-n">1</span>De module</p>
           <h2>Alle kracht zit op je onderarm.</h2>
-          <p>Een servo wikkelt een touw op een spoel van 16 mm. Twee klittenbanden houden de module 52 mm achter je pols, zodat je pols vrij blijft bewegen.</p>
+          <p>Een servo wikkelt een touw op een spoel van 16 mm. Twee klittenbanden houden de module 52 mm achter je
+            pols, zodat je pols vrij blijft bewegen.</p>
         </div>
         <div class="frame">
           <p class="step"><span class="step-n">2</span>Het touw</p>
           <h2>Een pees die je niet ziet.</h2>
-          <p>Het touw loopt door een rietje in je handpalm en door twee ringen naar de top van je wijsvinger. Daar zit het vastgenaaid.</p>
+          <p>Het touw loopt door een rietje in je handpalm en door twee ringen naar de top van je wijsvinger. Daar zit
+            het vastgenaaid.</p>
         </div>
         <div class="frame">
           <p class="step"><span class="step-n">3</span>De beweging</p>
           <h2>Je vinger buigt. Jij hoeft niets te doen.</h2>
           <dl class="readout">
-            <div><dt>Knokkel</dt><dd>{{ readout.mcp }}°</dd></div>
-            <div><dt>Midden</dt><dd>{{ readout.pip }}°</dd></div>
-            <div><dt>Top</dt><dd>{{ readout.dip }}°</dd></div>
-            <div class="readout-rope"><dt>Touw</dt><dd>{{ readout.rope }} mm</dd></div>
+            <div>
+              <dt>Knokkel</dt>
+              <dd>{{ readout.mcp }}°</dd>
+            </div>
+            <div>
+              <dt>Midden</dt>
+              <dd>{{ readout.pip }}°</dd>
+            </div>
+            <div>
+              <dt>Top</dt>
+              <dd>{{ readout.dip }}°</dd>
+            </div>
+            <div class="readout-rope">
+              <dt>Touw</dt>
+              <dd>{{ readout.rope }} mm</dd>
+            </div>
           </dl>
         </div>
         <div class="frame frame-motto">

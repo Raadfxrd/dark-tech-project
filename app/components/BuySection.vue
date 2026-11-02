@@ -1,7 +1,7 @@
 <script setup>
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import {onBeforeUnmount, onMounted, ref, watch} from 'vue'
 
-const props = defineProps({ glove: { type: Object, default: null } })
+const props = defineProps({glove: {type: Object, default: null}})
 
 const reserved = ref(false)
 const shot = ref('')
@@ -14,7 +14,7 @@ onMounted(() => {
     if (!e.isIntersecting) return
     near.value = true
     io.disconnect()
-  }, { rootMargin: '600px 0px' })
+  }, {rootMargin: '600px 0px'})
   io.observe(figure.value)
 })
 onBeforeUnmount(() => io?.disconnect())

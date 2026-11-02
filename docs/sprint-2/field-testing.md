@@ -103,10 +103,10 @@ tegelijk praten. Liefst een Creative Tech en een Embedded, eentje legt de werkin
 
 - 3D print moet worden uitgeprint
 - De pico draagbaar maken
-  - Batterij
-  - Groter doosje
-  - Rietjes of iets gelijkaardigs voor de kabels
-  - Sportarmband regelen voor doosje
+    - Batterij
+    - Groter doosje
+    - Rietjes of iets gelijkaardigs voor de kabels
+    - Sportarmband regelen voor doosje
 - Posters printen
 - Provocatype in elkaar zetten
 - Enquete maken
