@@ -428,7 +428,7 @@ h1 {
 	letter-spacing: -0.035em;
 }
 
-@media (max-width: 820px), (max-aspect-ratio: 1/1) {
+@media (max-width: 820px), (max-aspect-ratio: 1/1) { /* same query in lib/glove.js */
 	/* Phones: the model sits in the upper half, captions at the bottom over a porcelain scrim. */
 	.stage::after {
 		content: "";

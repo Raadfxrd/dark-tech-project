@@ -43,6 +43,8 @@ export async function createGlove(canvas, {modelUrl, still}) {
 	}))
 
 	let w = 1, h = 1
+	// Must match the phone breakpoint in main.css, or the model lands on the captions.
+	const stacked = matchMedia('(max-width: 820px), (max-aspect-ratio: 1/1)')
 	const resizer = new ResizeObserver(() => {
 		w = canvas.clientWidth || 1
 		h = canvas.clientHeight || 1
@@ -83,7 +85,7 @@ export async function createGlove(canvas, {modelUrl, still}) {
 	return {
 		// Draws the story at progress p and returns the finger's state for the readout.
 		render(p, now) {
-			const aspect = w / h, wide = aspect > 1.1
+			const aspect = w / h, wide = !stacked.matches
 			born ??= now
 			// On arrival the finger curls once, as if to say hello.
 			const k = (now - born) / 1800
