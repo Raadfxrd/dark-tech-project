@@ -27,8 +27,8 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
         <div class="feature-grid">
           <article>
             <h3>Beweegt voor je</h3>
-            <p>Greep buigt je wijsvinger op het juiste moment. Pakken, vasthouden, loslaten: je hoeft er niet meer bij
-              stil te staan.</p>
+            <p>Greep buigt je wijsvinger op het juiste moment. Bij dagelijkse klusjes, zwaar tilwerk of steeds dezelfde
+              beweging: je hoeft er niet meer bij stil te staan.</p>
           </article>
           <article>
             <h3>Leert je kennen</h3>
@@ -45,6 +45,30 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
             <p>Greep loopt op een powerbank aan je riem, met één USB-kabel naar de module. Zo zit er geen batterij op je
               arm.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Real answers from the Society 5.0 survey, cut the way a brand would cut them. -->
+    <section class="quotes">
+      <div class="wrap">
+        <div class="quotes-head">
+          <h2 class="title">Getest op Society&nbsp;5.0.</h2>
+          <p>Alle vier de testers vonden het idee duidelijk.</p>
+        </div>
+        <div class="quote-grid">
+          <figure>
+            <blockquote><p>“Indrukwekkend …”</p></blockquote>
+            <figcaption>Tester, Society&nbsp;5.0</figcaption>
+          </figure>
+          <figure>
+            <blockquote><p>“Leuk hoe het zo interactief en hierdoor persoonlijk voelde.”</p></blockquote>
+            <figcaption>Tester, Society&nbsp;5.0</figcaption>
+          </figure>
+          <figure>
+            <blockquote><p>“… Goed gedaan.”</p></blockquote>
+            <figcaption>Tester, Society&nbsp;5.0</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -81,11 +105,11 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
           <dl class="spec-list">
             <div>
               <dt>Module</dt>
-              <dd>95 × 53 × 28 mm</dd>
+              <dd>95 × 53 × 28&nbsp;mm</dd>
             </div>
             <div>
               <dt>Bevestiging</dt>
-              <dd>Twee klittenbanden om de onderarm, 52 mm achter de pols</dd>
+              <dd>Twee klittenbanden om de onderarm, 52&nbsp;mm achter de pols</dd>
             </div>
             <div>
               <dt>Bewegingsbereik</dt>
@@ -93,7 +117,7 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
             </div>
             <div>
               <dt>Aandrijving</dt>
-              <dd>Servo met een spoel van Ø 16 mm</dd>
+              <dd>Servo met een spoel van Ø&nbsp;16&nbsp;mm</dd>
             </div>
             <div>
               <dt>Touwgeleiding</dt>
@@ -101,7 +125,7 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
             </div>
             <div>
               <dt>Ringen</dt>
-              <dd>Binnenmaat Ø 21,5 mm en Ø 18 mm</dd>
+              <dd>Binnenmaat Ø&nbsp;21,5&nbsp;mm en Ø&nbsp;18&nbsp;mm</dd>
             </div>
             <div>
               <dt>Nulpunt</dt>
@@ -142,14 +166,30 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
         <h2 class="title">Veelgestelde vragen</h2>
         <div class="faq-list">
           <details>
-            <summary>Wat gebeurt er met mijn bewegingsgegevens?</summary>
-            <p>Greep bewaart elke beweging om je beter te leren kennen. We delen je gegevens alleen met partners die
-              bijdragen aan je zorg en aan betere producten.</p>
+            <summary>Voor wie is Greep?</summary>
+            <p>Voor iedereen bij wie de hand niet meer alles doet wat hij moet doen: tijdens revalidatie, na een blessure
+              of als het met de jaren minder gaat. Twijfel je? Je fysiotherapeut of arts kan Greep ook voor je
+              aanvragen.</p>
           </details>
           <details>
-            <summary>Voor wie is Greep?</summary>
-            <p>Voor iedereen die wat hulp kan gebruiken bij het bewegen van de hand: tijdens revalidatie, na een
-              blessure of gewoon om minder na te hoeven denken.</p>
+            <summary>Houd ik zelf de controle over mijn hand?</summary>
+            <p>Ja. Jij bepaalt wie er toegang heeft tot je hand. Alleen bij afwijkingen grijpt het Greep Zorgteam
+              automatisch in, voor je eigen veiligheid.</p>
+          </details>
+          <details>
+            <summary>Kan ik Greep zelf stilzetten?</summary>
+            <p>Greep stopt vanzelf als dat nodig is. Wil je Greep helemaal uitzetten, neem dan contact op met je
+              contactpersoon.</p>
+          </details>
+          <details>
+            <summary>Kan ik Greep de hele dag dragen?</summary>
+            <p>Ja. Op je hand draag je alleen een dunne handschoen en twee ringen, alles wat weegt zit op je onderarm.
+              Hoe langer je Greep draagt, hoe beter hij je leert kennen.</p>
+          </details>
+          <details>
+            <summary>Worden mijn bewegingsgegevens verkocht?</summary>
+            <p>Nooit zonder je toestemming. Die geef je één keer, bij het reserveren. Daarna delen we je bewegingen
+              alleen met partners die bijdragen aan je zorg en aan betere producten.</p>
           </details>
         </div>
       </div>

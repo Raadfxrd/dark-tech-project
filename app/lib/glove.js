@@ -12,7 +12,7 @@ const REST = 0.12 // finger flex while nobody pulls
 // Camera stops: where it looks from (pos) and at (tgt).
 const VIEWS = {
 	hero: {pos: [-280, -270, -470], tgt: [-5, -12, 0]},
-	module: {pos: [-330, -250, -190], tgt: [-80, -40, 8]}, // from the elbow side, so the hand recedes behind the module
+	module: {pos: [-372, -302, -240], tgt: [-60, -40, 8]}, // from the elbow side, so the hand recedes behind the module
 	palm: {pos: [-5, -560, -170], tgt: [35, -12, 0]},
 	finger: {pos: [80, -160, -205], tgt: [108, -14, -14]},
 	outro: {pos: [-170, -330, -560], tgt: [-30, -12, 0]},
@@ -84,7 +84,8 @@ export async function createGlove(canvas, {modelUrl, still}) {
 
 	return {
 		// Draws the story at progress p and returns the finger's state for the readout.
-		render(p, now) {
+		// inset: px on the left that the captions cover on wide screens; the model fits in the rest.
+		render(p, now, inset = 0) {
 			const aspect = w / h, wide = !stacked.matches
 			born ??= now
 			// On arrival the finger curls once, as if to say hello.
@@ -94,11 +95,12 @@ export async function createGlove(canvas, {modelUrl, still}) {
 			setLid(value(p, LID))
 
 			const [i, j, e] = segment(p, CAMERA, still)
-			// Portrait screens need more distance to fit the arm; captions on wide screens take ~40% of the width.
-			aim(views[CAMERA[i][1]], views[CAMERA[j][1]], e, Math.min(2.4, Math.max(1, 1.5 / aspect)) * (wide ? 1.4 : 1))
+			// The arm is long, so narrow free space needs more distance to fit it.
+			const free = wide ? w - inset : w
+			aim(views[CAMERA[i][1]], views[CAMERA[j][1]], e, Math.min(2.9, Math.max(1, 1.5 * h / free)))
 			camera.aspect = aspect
 			const side = value(p, SIDE, still)
-			camera.setViewOffset(w, h, wide ? -0.17 * w * side : 0, wide ? 0 : 0.17 * h, w, h)
+			camera.setViewOffset(w, h, wide ? -inset / 2 * side : 0, wide ? 0 : 0.17 * h, w, h)
 			renderer.render(scene, camera)
 
 			const deg = (a) => Math.round(Math.abs(a * flexNow) * 180 / Math.PI)

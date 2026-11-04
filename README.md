@@ -65,12 +65,12 @@ A replacement model works as long as it keeps these node names.
 |---|---|
 | `app/app.vue` | The page: nav, sections and footer |
 | `app/components/GloveStory.vue` | Sticky 3D stage, captions and the scroll spring |
-| `app/components/BuySection.vue` | Product still and the reserve button |
+| `app/components/BuySection.vue` | Product still and the reserve button, which reserves by itself after 4 s of hesitation |
 | `app/lib/glove.js` | three.js scene, finger rig and the story tracks |
 | `app/lib/timeline.js` | Interpolation between track keys |
 | `app/assets/css/main.css` | Design tokens and all styles |
-| `public/` | Logo, glove model and its licence |
-| `docs/`, `sprint-1/` | Standups, field testing and the sprint 1 retrospective |
+| `public/` | Logo, favicons, glove model and its licence |
+| `docs/`, `sprint-1/` | Standups, field testing, survey results and the sprint 1 retrospective |
 
 ## Credits
 

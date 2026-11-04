@@ -25,17 +25,22 @@ onMounted(() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches
   const frames = [...story.value.querySelectorAll('.frame')]
   const shown = frames.map(() => -1)
-  let target = 0, p = 0, v = 0, prev = performance.now(), visible = true
+  let target = 0, p = 0, v = 0, prev = performance.now(), visible = true, inset = 0
 
   const measure = () => {
     const r = story.value.getBoundingClientRect()
     const range = r.height - innerHeight // 0 until the stylesheet has sized the story; NaN would stick in the spring
     target = range > 0 ? Math.min(1, Math.max(0, -r.top / range)) : 0
   }
-  measure()
+  const layout = () => {
+    measure()
+    const f = frames[1] // right edge of the caption column, in stage px
+    inset = f.offsetParent.offsetLeft + f.offsetLeft + f.offsetWidth
+  }
+  layout()
   p = target
   addEventListener('scroll', measure, {passive: true})
-  const sizer = new ResizeObserver(measure)
+  const sizer = new ResizeObserver(layout)
   sizer.observe(story.value)
   const io = new IntersectionObserver(([e]) => {
     visible = e.isIntersecting
@@ -72,7 +77,7 @@ onMounted(() => {
       const [a, b] = WINDOWS[i]
       if (!still) el.style.translate = `0 ${(1 - o) * (p < (a + b) / 2 ? 18 : -18)}px`
     })
-    if (glove) Object.assign(readout, glove.render(p, now))
+    if (glove) Object.assign(readout, glove.render(p, now, inset))
   }
   raf = requestAnimationFrame(tick)
 
@@ -116,7 +121,7 @@ onBeforeUnmount(() => {
         <div class="frame">
           <p class="step"><span class="step-n">1</span>De module</p>
           <h2>Alle kracht zit op je onderarm.</h2>
-          <p>Een servo wikkelt een touw op een spoel van 16 mm. Twee klittenbanden houden de module 52 mm achter je
+          <p>Een servo wikkelt een touw op een spoel van 16&nbsp;mm. Twee klittenbanden houden de module 52&nbsp;mm achter je
             pols, zodat je pols vrij blijft bewegen.</p>
         </div>
         <div class="frame">
