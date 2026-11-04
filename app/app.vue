@@ -54,7 +54,7 @@ const glove = shallowRef(null) // the loaded 3D scene, shared with the buy secti
       <div class="wrap">
         <div class="quotes-head">
           <h2 class="title">Getest op Society&nbsp;5.0.</h2>
-          <p>Alle vier de testers vonden het idee duidelijk.</p>
+          <p>100% van de ondervraagde testers vond het idee duidelijk.</p>
         </div>
         <div class="quote-grid">
           <figure>
