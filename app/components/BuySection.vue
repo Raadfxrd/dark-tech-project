@@ -22,7 +22,9 @@ onMounted(() => {
   // Testers asked for a demo that makes you do something you did not choose: linger here and Greep reserves for you.
   eye = new IntersectionObserver(([e]) => {
     clearTimeout(timer)
-    if (e.isIntersecting && !reserved.value) timer = setTimeout(() => reserved.value = decided.value = true, 4000)
+    if (e.isIntersecting && !reserved.value) timer = setTimeout(() => {
+      if (!reserved.value) reserved.value = decided.value = true // a click during the wait was the visitor's own choice
+    }, 4000)
   }, {threshold: 0.6})
   eye.observe(form.value)
 })
@@ -34,7 +36,7 @@ onBeforeUnmount(() => {
 
 // The still costs one large frame, so it is rendered only once the model has loaded and this section is close.
 watch([near, () => props.glove], ([isNear, glove]) => {
-  if (isNear && glove && !shot.value) shot.value = glove.shot(1200)
+  if (isNear && glove && !shot.value) glove.shot(1200).then((url) => shot.value = url)
 })
 </script>
 
@@ -47,7 +49,7 @@ watch([near, () => props.glove], ([isNear, glove]) => {
       <form ref="form" class="buy-form" @submit.prevent="reserved = true">
         <h2 class="title">Greep H1</h2>
         <p class="price">€199</p>
-        <button class="btn btn-lg" type="submit" :disabled="reserved">
+        <button class="btn btn-lg" type="submit" :aria-disabled="reserved">
           {{ reserved ? 'Gereserveerd' : 'Reserveer' }}
         </button>
         <p class="status" role="status">

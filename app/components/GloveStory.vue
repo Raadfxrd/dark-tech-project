@@ -11,6 +11,7 @@ const W = 2 * Math.PI / 0.3 // spring between scrollbar and story: critically da
 
 const modelUrl = `${useRuntimeConfig().app.baseURL}models/greep_A_handschoen.glb`
 const story = ref(null)
+const stage = ref(null)
 const canvas = ref(null)
 const ready = ref(false)
 const failed = ref(false)
@@ -25,14 +26,16 @@ onMounted(() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches
   const frames = [...story.value.querySelectorAll('.frame')]
   const shown = frames.map(() => -1)
-  let target = 0, p = 0, v = 0, prev = performance.now(), visible = true, inset = 0
+  let target = 0, p = 0, v = 0, prev = performance.now(), visible = true, inset = 0, stageH = 0
 
   const measure = () => {
     const r = story.value.getBoundingClientRect()
-    const range = r.height - innerHeight // 0 until the stylesheet has sized the story; NaN would stick in the spring
+    // The stage, not innerHeight: on phones innerHeight grows when the toolbar hides and the story would shift.
+    const range = r.height - stageH // 0 until the stylesheet has sized the story; NaN would stick in the spring
     target = range > 0 ? Math.min(1, Math.max(0, -r.top / range)) : 0
   }
   const layout = () => {
+    stageH = stage.value.offsetHeight
     measure()
     const f = frames[1] // right edge of the caption column, in stage px
     inset = f.offsetParent.offsetLeft + f.offsetLeft + f.offsetWidth
@@ -66,6 +69,7 @@ onMounted(() => {
         v += (W * W * (target - p) - 2 * W * v) * h
         p += v * h
       }
+      if (Math.abs(target - p) < 1e-4 && Math.abs(v) < 1e-3) p = target, v = 0 // land, so the scene can stop redrawing
     }
     frames.forEach((el, i) => {
       const o = windowOpacity(p, WINDOWS[i], FADE)
@@ -103,7 +107,7 @@ onBeforeUnmount(() => {
 <template>
   <section ref="story" class="story" aria-label="Greep H1 en hoe hij werkt">
     <span id="zo-werkt-het" class="anchor"/>
-    <div class="stage">
+    <div ref="stage" class="stage">
       <canvas ref="canvas" :class="{ ready }" role="img"
               aria-label="3D-model van de Greep H1: een handschoen met een touw naar de wijsvinger en een module op de onderarm"/>
       <img v-if="failed" class="fallback" src="/logo.svg" alt="">

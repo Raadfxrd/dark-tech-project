@@ -42,13 +42,14 @@ export async function createGlove(canvas, {modelUrl, still}) {
 		return [name, {tgt, dir: off.clone().normalize(), dist: off.length()}]
 	}))
 
-	let w = 1, h = 1
+	let w = 1, h = 1, drawn = '' // inputs of the frame on the canvas; '' forces a redraw
 	// Must match the phone breakpoint in main.css, or the model lands on the captions.
 	const stacked = matchMedia('(max-width: 820px), (max-aspect-ratio: 1/1)')
 	const resizer = new ResizeObserver(() => {
 		w = canvas.clientWidth || 1
 		h = canvas.clientHeight || 1
 		renderer.setSize(w, h, false)
+		drawn = '' // setSize clears the canvas, even at the same size
 	})
 	resizer.observe(canvas)
 
@@ -91,23 +92,29 @@ export async function createGlove(canvas, {modelUrl, still}) {
 			// On arrival the finger curls once, as if to say hello.
 			const k = (now - born) / 1800
 			const hello = still || k > 1 ? 0 : Math.sin(Math.PI * k) ** 2 * 0.5 * Math.max(0, 1 - p / 0.07)
-			setFlex(value(p, FLEX) + hello)
-			setLid(value(p, LID))
+			// A still scene is not drawn again: the canvas keeps its last frame, and the GPU (and battery) rest.
+			const key = `${p} ${hello} ${inset} ${w} ${h} ${wide}`
+			if (key !== drawn) {
+				drawn = key
+				setFlex(value(p, FLEX) + hello)
+				setLid(value(p, LID))
 
-			const [i, j, e] = segment(p, CAMERA, still)
-			// The arm is long, so narrow free space needs more distance to fit it.
-			const free = wide ? w - inset : w
-			aim(views[CAMERA[i][1]], views[CAMERA[j][1]], e, Math.min(2.9, Math.max(1, 1.5 * h / free)))
-			camera.aspect = aspect
-			const side = value(p, SIDE, still)
-			camera.setViewOffset(w, h, wide ? -inset / 2 * side : 0, wide ? 0 : 0.17 * h, w, h)
-			renderer.render(scene, camera)
+				const [i, j, e] = segment(p, CAMERA, still)
+				// The arm is long, so narrow free space needs more distance to fit it.
+				const free = wide ? w - inset : w
+				aim(views[CAMERA[i][1]], views[CAMERA[j][1]], e, Math.min(2.9, Math.max(1, 1.5 * h / free)))
+				camera.aspect = aspect
+				const side = value(p, SIDE, still)
+				camera.setViewOffset(w, h, wide ? -inset / 2 * side : 0, wide ? 0 : 0.17 * h, w, h)
+				renderer.render(scene, camera)
+			}
 
 			const deg = (a) => Math.round(Math.abs(a * flexNow) * 180 / Math.PI)
 			return {mcp: deg(ANG[0]), pip: deg(ANG[1]), dip: deg(ANG[2]), rope: Math.round(pulled)}
 		},
 
-		// A square still for the buy section, rendered off the live canvas and handed back as a data URL.
+		// A square still for the buy section, rendered off the live canvas; resolves to an object URL.
+		// toBlob copies the pixels now and encodes the PNG off the main thread, so the scroll does not hitch.
 		shot(size) {
 			const keep = {pr: renderer.getPixelRatio(), flex: flexNow, lid: lidNow}
 			renderer.setPixelRatio(1)
@@ -118,11 +125,12 @@ export async function createGlove(canvas, {modelUrl, still}) {
 			setLid(0)
 			aim(views.shot, views.shot, 0, 1)
 			renderer.render(scene, camera)
-			const url = canvas.toDataURL('image/png')
+			const url = new Promise((ok) => canvas.toBlob((b) => ok(URL.createObjectURL(b))))
 			renderer.setPixelRatio(keep.pr)
 			renderer.setSize(w, h, false)
 			setFlex(keep.flex)
 			setLid(keep.lid)
+			drawn = ''
 			return url
 		},
 
