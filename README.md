@@ -70,7 +70,7 @@ A replacement model works as long as it keeps these node names.
 | `app/lib/timeline.js` | Interpolation between track keys |
 | `app/assets/css/main.css` | Design tokens and all styles |
 | `public/` | Logo, favicons, glove model and its licence |
-| `docs/`, `sprint-1/` | Standups, field testing, survey results and the sprint 1 retrospective |
+| `docs/`, `docs/sprint-1` | Standups, field testing, survey results and the sprint 1 retrospective |
 
 ## Credits
 

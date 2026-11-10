@@ -5,9 +5,9 @@ Enquête "Society 5.0 Controlling Wearable" (Microsoft Forms), opgehaald op 4 no
 - **Respons:** veel meer mensen hebben het prototype getest dan er de enquête invulden. Deze resultaten komen van de 4
   invullers (gemiddeld ruim 4 minuten invultijd), dus het zijn signalen, geen conclusies.
 - **Schalen:** alle cijfervragen lopen van 1 tot 5, zonder labels bij de uitersten.
-- **Open vragen:** de gedeelde resultatenlink toont per open vraag alleen de 3 nieuwste antwoorden. Bij drie vragen
-  ontbreekt daardoor het antwoord van de eerste invuller (aangegeven met *n.v.t. via link*). De volledige antwoorden
-  staan in Forms onder "Openen in Excel".
+- **Open vragen:** de gedeelde resultatenlink toont per open vraag alleen de 3 nieuwste antwoorden. Bij alle vijf de
+  open vragen ontbreekt daardoor het antwoord van de eerste invuller (aangegeven met *n.v.t. via link*). De volledige
+  antwoorden staan in Forms onder "Openen in Excel".
 
 ## Wie
 
@@ -86,14 +86,16 @@ Onderzoeksvraag: *In hoeverre beseffen dragers van een wearable die hun hand bew
   geven en niets hoeven doen wat je niet wil.
 - **Of ze het vóór de uitleg zagen, weten we niet.** Twee mensen lieten die vraag leeg, één schreef "Geen" en het
   vierde antwoord is niet zichtbaar via de link. Dit is het deel van de onderzoeksvraag waar we het minst over weten.
-- **Toch voelen ze weinig controleverlies.** Niemand gaf lager dan een 3 voor de controle die ze nog zouden voelen. Dat
-  botst met de zorgen die ze opschrijven: wat ze erover denken en wat ze verwachten te voelen lopen uiteen.
+- **Hun zorgen zien we niet duidelijk terug in de cijfers.** Niemand gaf lager dan een 3 voor de controle die ze nog
+  zouden voelen: drie keer een 3 en één keer een 5. De schaal heeft geen labels, dus een 3 zegt niet of dat veel of
+  weinig is. Het lijkt niet te passen bij de zorgen die ze opschrijven, maar met 4 invullers kunnen we dat niet hard
+  maken.
 - **Alleen als het moet, of als de arts het zegt.** Niemand zou Greep zonder voorwaarde gebruiken, maar ook niemand
   zegt nee als de arts het aanraadt. De twee invullers die Greep zelf niet zouden gebruiken, kozen bij het advies van
   de arts dus voor ja of misschien. Een autoriteit verschuift de grens.
 - **Dragen blijft een drempel.** Hoe graag testers de handschoen zelf zouden dragen scoort het laagst (3,0). Dat gaat
   over comfort en uiterlijk van het fysieke prototype.
-- **Data verkopen vinden de meesten erg** (3,75), maar de spreiding is groot: twee keer een 5, één keer een 2.
+- **Over data verkopen zijn de meningen verdeeld** (3,75): twee keer een 5, één keer een 3 en één keer een 2.
 
 ## Wat we op de website hebben veranderd
 
@@ -102,7 +104,7 @@ Onderzoeksvraag: *In hoeverre beseffen dragers van een wearable die hun hand bew
 | "Er een demo aanvast maken dat je iets doet dat je niet wil" | Wie 4 seconden twijfelt bij de prijs, krijgt een reservering die Greep zelf heeft gedaan. Annuleren gaat via je contactpersoon. |
 | Iedereen die de enquête invulde vond het idee duidelijk | "100% van de ondervraagde testers vond het idee duidelijk", zonder aantal. Plus testerquotes, ingekort zoals een merk dat zou doen: "Indrukwekkend …" en "… Goed gedaan." |
 | Zorgen over autonomie en controle door anderen | Nieuwe vragen in de FAQ ("Houd ik zelf de controle?", "Kan ik Greep zelf stilzetten?") met een geruststellend antwoord en een addertje eronder |
-| Data verkopen vinden testers erg | Het data-antwoord belooft "nooit zonder je toestemming", maar die toestemming geef je bij het reserveren, ook als Greep dat voor je deed |
+| Twee van de vier testers gaven een 5 voor hoe erg ze data verkopen vinden | Het data-antwoord belooft "nooit zonder je toestemming", maar die toestemming geef je bij het reserveren, ook als Greep dat voor je deed |
 | Alleen gebruiken als de vinger niet goed meer werkt, of op advies van de arts | "Voor wie is Greep?" richt zich nu op revalidatie en ouderdom, en je arts kan Greep voor je aanvragen |
 | Gekozen taken: dagelijks, fysiek zwaar, repetitief | Genoemd bij de functie "Beweegt voor je" |
 | Dragen scoort 3,0 | Nieuwe FAQ "Kan ik Greep de hele dag dragen?". Comfort en uiterlijk zelf moeten in het fysieke prototype beter. |
